@@ -8,16 +8,16 @@ public class JSONVal {
         this.map = new HashMap<>();
     }
 
-    public void put(String key, Object value) {
-        this.map.put(key, value);
+    public void add(String key, Object value) {
+        this.map.put("\"" + key + "\"", value.equals("null") ? null : ("\"" + value + "\""));
     }
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("{");
+        StringBuilder result = new StringBuilder("\t{");
         for (String key : this.map.keySet())
-            result.append("\n").append(key).append(":").append(this.map.get(key));
-        result.append("\n}");
+            result.append("\n\t").append(key).append(":").append(this.map.get(key)).append(",");
+        result.append("\n\t}");
         return result.toString();
     }
 }

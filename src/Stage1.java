@@ -6,7 +6,7 @@ public class Stage1 {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String jsonInput = "{ \"storage\" : null }";
+        String jsonInput = "{ \"jdk\" : \"1.8.9\" }";
         String xmlInput = "<host>127.0.0.1</host>";
 
         System.out.println(convert2XML(jsonInput));
@@ -20,8 +20,7 @@ public class Stage1 {
         xmlElementVal[1] = xmlElementVal[1].strip();
 
         XML xml = new XML(xmlElementVal[0].substring(1, xmlElementVal[0].length()-1), // Strip out the double quotes from the tag name
-                        xmlElementVal[1].equals("null") ? null : (xmlElementVal[1].substring(1, xmlElementVal[1].length()-1)),  // Strip out the double quotes from the tag value
-                        null);
+                        xmlElementVal[1].equals("null") ? null : (xmlElementVal[1].substring(1, xmlElementVal[1].length()-1)));  // Strip out the double quotes from the tag value
         return xml.toString();
     }
 
@@ -40,7 +39,7 @@ public class Stage1 {
 
             // Self closing tag
             JSONVal json = new JSONVal();
-            json.put(tagName, null);
+            json.add(tagName, null);
             return json.toString();
         }
 
@@ -50,7 +49,7 @@ public class Stage1 {
             matcher.find(endMatchIndex);
             value = xml.substring(endMatchIndex, matcher.start());
             JSONVal json = new JSONVal();
-            json.put(tagName, value);
+            json.add(tagName, value);
             return json.toString();
         }
     }
