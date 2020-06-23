@@ -17,6 +17,7 @@ public class JSONVal {
         StringBuilder result = new StringBuilder("\t{");
         for (String key : this.map.keySet())
             result.append("\n\t").append(key).append(":").append(this.map.get(key)).append(",");
+        result.deleteCharAt(result.length()-1);
         result.append("\n\t}");
         return result.toString();
     }

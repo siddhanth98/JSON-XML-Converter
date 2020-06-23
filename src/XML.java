@@ -17,6 +17,18 @@ public class XML {
         this.attributeList.add(attr);
     }
 
+    public void setTagName(String tagName) {
+        this.tagName = tagName;
+    }
+
+    public void setValue(Object value) {
+        this.value = value;
+    }
+
+    public void setAttributeList(List<Attribute> attributeList) {
+        this.attributeList = attributeList;
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("<");
@@ -30,6 +42,7 @@ public class XML {
         }
 
         if (this.value != null) {
+            this.setValue(this.value.toString().replaceAll("\"", ""));
             result.append(">");
             result.append(this.value);
             result.append("</");

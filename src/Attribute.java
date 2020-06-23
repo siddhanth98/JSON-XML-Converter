@@ -7,12 +7,26 @@ public class Attribute {
         this.value = v;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
         return (
-                this.name + " = " + this.value
+                this.name + " = " + "\"" + this.value + "\""
         );
     }
-
-
 }
