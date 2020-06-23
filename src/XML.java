@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class XML {
@@ -11,6 +12,8 @@ public class XML {
     }
 
     public void addAttribute(Attribute attr) {
+        if (this.attributeList == null)
+            this.attributeList = new ArrayList<>();
         this.attributeList.add(attr);
     }
 
