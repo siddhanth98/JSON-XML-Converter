@@ -1,3 +1,5 @@
+package stage1;
+
 public class JSON {
     String name;
     JSONVal value = null;

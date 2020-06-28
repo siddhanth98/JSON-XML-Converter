@@ -1,6 +1,8 @@
-import java.util.*;
-import java.util.regex.Pattern;
+package stage1;
+
+import java.util.Scanner;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Stage1 {
     private static Scanner sc = new Scanner(System.in);

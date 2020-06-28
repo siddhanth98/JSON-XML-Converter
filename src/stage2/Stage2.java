@@ -1,8 +1,10 @@
+package stage2;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.io.File;
+import java.util.regex.Pattern;
 
 public class Stage2 {
     public static void main(String[] args) {

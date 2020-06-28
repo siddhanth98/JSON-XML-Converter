@@ -1,5 +1,7 @@
-import java.util.Map;
+package stage2;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class JSONVal {
     Map<String, Object> map;

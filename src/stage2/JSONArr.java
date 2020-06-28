@@ -1,5 +1,7 @@
-import java.util.List;
+package stage2;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class JSONArr {
     List<JSONVal> jsonVals;
