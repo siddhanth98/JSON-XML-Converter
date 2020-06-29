@@ -30,11 +30,11 @@ public class XMLParser {
         Pattern valuePattern = Pattern.compile(">([.]?|[^<>\n]+)<");
 
         Stack<XML> elements = new Stack<>();
-        parseXML2(xmlInput, elements, anyTagPattern, tagNamePattern, attrPattern, valuePattern);
+        parseXML(xmlInput, elements, anyTagPattern, tagNamePattern, attrPattern, valuePattern);
     }
 
-    public static void parseXML2(String xmlInput, Stack<XML> elements, Pattern anyTagPattern, Pattern tagNamePattern,
-                                 Pattern attrPattern, Pattern valuePattern) {
+    public static void parseXML(String xmlInput, Stack<XML> elements, Pattern anyTagPattern, Pattern tagNamePattern,
+                                Pattern attrPattern, Pattern valuePattern) {
         // Get the next tag if it exists
         Matcher anyTagMatcher = anyTagPattern.matcher(xmlInput);
         if (!anyTagMatcher.find())
@@ -96,6 +96,6 @@ public class XMLParser {
                 }
             System.out.println(xml.display());
         }
-        parseXML2(xmlInput.substring(tagEndIndex), elements, anyTagPattern, tagNamePattern, attrPattern, valuePattern);
+        parseXML(xmlInput.substring(tagEndIndex), elements, anyTagPattern, tagNamePattern, attrPattern, valuePattern);
     }
 }
