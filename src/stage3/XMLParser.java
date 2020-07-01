@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class XMLParser {
     public static void main(String[] args) {
-        File file = new File("D:\\Intellij Projects\\HyperSkill Projects\\JSON-XML-Converter\\src\\stage3\\test.txt");
+        File file = new File("./test.txt");
         StringBuilder xml = new StringBuilder();
 
         try(Scanner sc = new Scanner(file)) {
